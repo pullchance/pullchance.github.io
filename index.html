@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>pullChance by Fargo</title>
+    <style>
+        td {
+            width: 100px;
+        }
+        input {
+            width: 80px;
+        }
+        div {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>pullChance by Fargo</h1>
+    <div id="app">
+        <table>
+            <tbody>
+                <tr>
+                    <th>rarity</th>
+                    <th>red</th>
+                    <th>blue</th>
+                    <th>green</th>
+                    <th>coloress</th>
+                    <th>sum</th>
+                </tr>
+                <tr>
+                    <td>5* focus</td>
+                    <td><input type="number" v-model="rf"></td>
+                    <td><input type="number" v-model="bf"></td>
+                    <td><input type="number" v-model="gf"></td>
+                    <td><input type="number" v-model="cf"></td>
+                    <td>{{sf}}</td>
+                </tr>
+                <tr>
+                    <td>5*</td>
+                    <td><input type="number" v-model="r5"></td>
+                    <td><input type="number" v-model="b5"></td>
+                    <td><input type="number" v-model="g5"></td>
+                    <td><input type="number" v-model="c5"></td>
+                    <td>{{s5}}</td>
+                </tr>
+                <tr>
+                    <td>4*</td>
+                    <td><input type="number" v-model="r4"></td>
+                    <td><input type="number" v-model="b4"></td>
+                    <td><input type="number" v-model="g4"></td>
+                    <td><input type="number" v-model="c4"></td>
+                    <td>{{s4}}</td>
+                </tr>
+                <tr>
+                    <td>3*</td>
+                    <td><input type="number" v-model="r3"></td>
+                    <td><input type="number" v-model="b3"></td>
+                    <td><input type="number" v-model="g3"></td>
+                    <td><input type="number" v-model="c3"></td>
+                    <td>{{s3}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <table>
+            <tbody>
+                <tr><th>procents</th></tr>
+                <tr>
+                    <td>5* focus</td>
+                    <td><input type="number" v-model="pf"></td>
+                </tr>
+                <tr>
+                    <td>5*</td>
+                    <td><input type="number" v-model="p5"></td>
+                </tr>
+                <tr>
+                    <td>4*</td>
+                    <td><input type="number" v-model="p4"></td>
+                </tr>
+                <tr>
+                    <td>3*</td>
+                    <td><input type="number" v-model="p3"></td>
+                </tr>
+            </tbody>
+        </table>
+        <div>5-Star Focus that is red = {{pf}}% * {{rf}}/{{sf}} = {{rfr}}%</div>
+        <div>5-Star that is red = {{p5}}% * {{r5}}/{{s5}} = {{r5r}}%</div>
+        <div>4-Star that is red = {{p4}}% * {{r4}}/{{s4}} = {{r4r}}%</div>
+        <div>3-Star that is red = {{p3}}% * {{r3}}/{{s3}} = {{r3r}}%</div>
+        <br>
+        <div>Red Focus Unit = {{rfr}}% / ({{rfr}}%+{{r5r}}%+{{r4r}}%+{{r3r}}%) = {{rfu}}%</div>
+        <br>
+
+        <div>5-Star Focus that is blue = {{pf}}% * {{bf}}/{{sf}} = {{bfr}}%</div>
+        <div>5-Star that is blue = {{p5}}% * {{b5}}/{{s5}} = {{b5r}}%</div>
+        <div>4-Star that is blue = {{p4}}% * {{b4}}/{{s4}} = {{b4r}}%</div>
+        <div>3-Star that is blue = {{p3}}% * {{b3}}/{{s3}} = {{b3r}}%</div>
+        <br>
+        <div>Blue Focus Unit = {{bfr}}% / ({{bfr}}%+{{b5r}}%+{{b4r}}%+{{b3r}}%) = {{bfu}}%</div>
+        <br>
+
+        <div>5-Star Focus that is green = {{pf}}% * {{gf}}/{{sf}} = {{gfr}}%</div>
+        <div>5-Star that is green = {{p5}}% * {{g5}}/{{s5}} = {{g5r}}%</div>
+        <div>4-Star that is green = {{p4}}% * {{g4}}/{{s4}} = {{g4r}}%</div>
+        <div>3-Star that is green = {{p3}}% * {{g3}}/{{s3}} = {{g3r}}%</div>
+        <br>
+        <div>Green Focus Unit = {{gfr}}% / ({{gfr}}%+{{g5r}}%+{{g4r}}%+{{g3r}}%) = {{gfu}}%</div>
+        <br>
+
+        <div>5-Star Focus that is coloress = {{pf}}% * {{cf}}/{{sf}} = {{cfr}}%</div>
+        <div>5-Star that is coloress = {{p5}}% * {{c5}}/{{s5}} = {{c5r}}%</div>
+        <div>4-Star that is coloress = {{p4}}% * {{c4}}/{{s4}} = {{c4r}}%</div>
+        <div>3-Star that is coloress = {{p3}}% * {{c3}}/{{s3}} = {{c3r}}%</div>
+        <br>
+        <div>Coloress Focus Unit = {{cfr}}% / ({{cfr}}%+{{c5r}}%+{{c4r}}%+{{c3r}}%) = {{cfu}}%</div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="index.js"></script>
+</body>
+</html>
